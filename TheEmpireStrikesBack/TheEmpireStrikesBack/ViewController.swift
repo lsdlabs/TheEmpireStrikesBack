@@ -40,16 +40,12 @@ class ViewController: UIViewController {
                 print(error)
                 return
             }
-            
             if let responseData = data {
                 print("Data Retrieved.  Amount:")
                 print(responseData)
             }
-            
         }
         task.resume()
     }
-    
-    
 }
 
