@@ -46,6 +46,8 @@ class ViewController: UIViewController {
                 print("Data Retrieved.  Amount:")
                 print(responseData)
             }
+            
+            let decoder = JSONDecoder()
         }
         task.resume()
     }
