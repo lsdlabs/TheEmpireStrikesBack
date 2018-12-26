@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDataFromTheEmpireStrikesBack()
+        fetchTheEmpireStrikesBackCharacters()
     }
     
     func theEmpireStrikesBackUrl() -> URL? {
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         return url
     }
     
-    func fetchDataFromTheEmpireStrikesBack() {
+    func fetchTheEmpireStrikesBackCharacters() {
         guard let starWarsUrl = theEmpireStrikesBackUrl() else {
             print("URL Error")
             return
