@@ -48,16 +48,14 @@ class ViewController: UIViewController {
             print("Data Retrieved. Amount:")
             print(data)
             do {
-            let decoder = JSONDecoder()
-            let theEmpireStrikesBackInfo = try decoder.decode(TheEmpireStrikesBack.self, from: data)
+                let decoder = JSONDecoder()
+                let theEmpireStrikesBackInfo = try decoder.decode(TheEmpireStrikesBack.self, from: data)
                 self.characterURLs.append(contentsOf: theEmpireStrikesBackInfo.characters)
                 print(self.characterURLs)
-
+                
             } catch {
                 print(error)
             }
-//            self.characterURLs.append(contentsOf: theEmpireStrikesBackInfo.characters)
-//            print(self.characterURLs)
         }
         task.resume()
     }
