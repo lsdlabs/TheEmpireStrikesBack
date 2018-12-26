@@ -97,9 +97,10 @@
 		20AFF5F621CF1F39000A232E /* TheEmpireStrikesBack */ = {
 			isa = PBXGroup;
 			children = (
+				20AFF62521D40BF2000A232E /* Model */,
+				20AFF62621D40BFD000A232E /* View */,
+				20AFF62721D40C0A000A232E /* Controller */,
 				20AFF5F721CF1F39000A232E /* AppDelegate.swift */,
-				20AFF5F921CF1F39000A232E /* ViewController.swift */,
-				20AFF5FB21CF1F39000A232E /* Main.storyboard */,
 				20AFF5FE21CF1F3D000A232E /* Assets.xcassets */,
 				20AFF60021CF1F3D000A232E /* LaunchScreen.storyboard */,
 				20AFF60321CF1F3D000A232E /* Info.plist */,
@@ -123,6 +124,29 @@
 				20AFF61921CF1F3F000A232E /* Info.plist */,
 			);
 			path = TheEmpireStrikesBackUITests;
+			sourceTree = "<group>";
+		};
+		20AFF62521D40BF2000A232E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20AFF62621D40BFD000A232E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20AFF5FB21CF1F39000A232E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		20AFF62721D40C0A000A232E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20AFF5F921CF1F39000A232E /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
