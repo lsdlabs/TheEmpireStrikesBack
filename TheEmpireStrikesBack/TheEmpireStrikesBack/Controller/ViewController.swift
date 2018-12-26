@@ -42,12 +42,14 @@ class ViewController: UIViewController {
                 print(error)
                 return
             }
-            if let responseData = data {
-                print("Data Retrieved.  Amount:")
-                print(responseData)
+            guard let data = data else {
+                return
             }
+            print("Data Retrieved.  Amount:")
+            print(data)
             
             let decoder = JSONDecoder()
+            let theEmpireStrikesBackInfo = try! decoder.decode(TheEmpireStrikesBack.self, from: data)
         }
         task.resume()
     }
