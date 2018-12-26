@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var characterURLs = [String]()
+    var characters: [CharacterData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchDataFromTheEmpireStrikesBack()
