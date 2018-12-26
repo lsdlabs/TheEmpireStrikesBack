@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             guard let data = data else {
                 return
             }
-            print("Data Retrieved.  Amount:")
+            print("Data Retrieved. Amount:")
             print(data)
             
             let decoder = JSONDecoder()
