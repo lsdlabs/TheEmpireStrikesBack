@@ -9,10 +9,41 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        fetchDataFromTheEmpireStrikesBack()
+    }
+    
+    func theEmpireStrikesBackUrl() -> URL? {
+        let starWarsUrl = "https://swapi.co/api/films/2"
+        guard let url = URL(string: starWarsUrl) else {
+            print("URL Error")
+            return nil
+        }
+        return url
+    }
+    
+    func fetchDataFromTheEmpireStrikesBack() {
+        guard let starWarsUrl = theEmpireStrikesBackUrl() else {
+            print("URL Error")
+            return
+        }
+        let urlRequest = URLRequest(url: starWarsUrl)
+        
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
+        
+        let task = session.dataTask(with: urlRequest) { (data, repsonse, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let responseData = data {
+                print("Data Retrieved.  Amount:")
+                print(responseData)
+            }
+        }
+        task.resume()
     }
 }
-
