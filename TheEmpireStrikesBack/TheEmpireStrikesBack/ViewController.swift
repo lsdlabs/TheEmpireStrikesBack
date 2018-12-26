@@ -35,8 +35,7 @@ class ViewController: UIViewController {
         let session = URLSession(configuration: configuration)
         
         let task = session.dataTask(with: urlRequest) { (data, repsonse, error) in
-            guard error == nil else {
-                print("Error with GET request")
+            if let error = error {
                 print(error)
                 return
             }
@@ -48,4 +47,3 @@ class ViewController: UIViewController {
         task.resume()
     }
 }
-
