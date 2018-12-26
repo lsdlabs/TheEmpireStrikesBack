@@ -9,5 +9,5 @@
 import Foundation
 
 struct TheEmpireStrikesBack: Codable {
-    let characters: [URL]
+    let characters: [String]
 }
