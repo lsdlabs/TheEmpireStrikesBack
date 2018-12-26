@@ -50,6 +50,9 @@ class ViewController: UIViewController {
             
             let decoder = JSONDecoder()
             let theEmpireStrikesBackInfo = try! decoder.decode(TheEmpireStrikesBack.self, from: data)
+            
+            self.characterURLs.append(contentsOf: theEmpireStrikesBackInfo.characters)
+            print(self.characterURLs)
         }
         task.resume()
     }
