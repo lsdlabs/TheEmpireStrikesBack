@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     
     var characterURLs = [String]()
     var characters: [CharacterData] = []
