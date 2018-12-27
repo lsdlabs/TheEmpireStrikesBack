@@ -15,12 +15,16 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     var characterURLs = [String]()
     var characters: [CharacterData] = []
     
+    
+    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchTheEmpireStrikesBackCharacters()
     }
+    
+    
     
     // MARK: - Methods
     
@@ -94,7 +98,6 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
             }
-            
         }
         task.resume()
     }
@@ -111,6 +114,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     }
     
     
+    
     // MARK: - TableView Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -123,5 +127,4 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         cell.textLabel?.text = "\(characters[indexPath.row].name)"
         return cell
     }
-    
 }
