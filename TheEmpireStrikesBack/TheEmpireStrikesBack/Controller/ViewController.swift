@@ -83,10 +83,6 @@ class ViewController: UIViewController {
             
             guard let currentCharacter = self.parse(data: data) else { return }
             self.characters.append(currentCharacter)
-            
-            if self.characters.count == self.characterURLs.count{
-                //TODO: reload
-            }
         }
         task.resume()
     }
