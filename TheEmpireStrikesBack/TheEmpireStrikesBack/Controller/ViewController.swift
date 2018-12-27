@@ -69,7 +69,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
     func getCharacterData(from url: URL) {
         let urlRequest = URLRequest(url: url)
         
@@ -86,7 +85,6 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
-    
     
     func parse(data: Data) -> CharacterData? {
         do {
