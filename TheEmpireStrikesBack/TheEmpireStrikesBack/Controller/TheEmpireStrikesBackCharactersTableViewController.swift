@@ -103,8 +103,6 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         do {
             let decoder = JSONDecoder()
             let result = try decoder.decode(CharacterData.self, from: data)
-            print("Character Name:")
-            print(result.name)
             return result
         } catch {
             print("Error: \(error)")
