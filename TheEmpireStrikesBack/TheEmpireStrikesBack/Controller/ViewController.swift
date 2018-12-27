@@ -59,4 +59,18 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
+    
+    
+    func getCharacters(from characterURLArray: [String]) {
+        for url in characterURLArray{
+            getCharacterData(from: String)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
 }
