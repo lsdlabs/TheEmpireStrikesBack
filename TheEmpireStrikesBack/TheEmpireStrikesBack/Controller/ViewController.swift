@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var characterURLs = [String]()
+    var characters: [CharacterData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDataFromTheEmpireStrikesBack()
+        fetchTheEmpireStrikesBackCharacters()
     }
     
     func theEmpireStrikesBackUrl() -> URL? {
@@ -24,7 +27,7 @@ class ViewController: UIViewController {
         return url
     }
     
-    func fetchDataFromTheEmpireStrikesBack() {
+    func fetchTheEmpireStrikesBackCharacters() {
         guard let starWarsUrl = theEmpireStrikesBackUrl() else {
             print("URL Error")
             return
@@ -39,9 +42,19 @@ class ViewController: UIViewController {
                 print(error)
                 return
             }
-            if let responseData = data {
-                print("Data Retrieved.  Amount:")
-                print(responseData)
+            guard let data = data else {
+                return
+            }
+            print("Data Retrieved. Amount:")
+            print(data)
+            do {
+                let decoder = JSONDecoder()
+                let theEmpireStrikesBackInfo = try decoder.decode(TheEmpireStrikesBack.self, from: data)
+                self.characterURLs.append(contentsOf: theEmpireStrikesBackInfo.characters)
+                print(self.characterURLs)
+                
+            } catch {
+                print(error)
             }
         }
         task.resume()
