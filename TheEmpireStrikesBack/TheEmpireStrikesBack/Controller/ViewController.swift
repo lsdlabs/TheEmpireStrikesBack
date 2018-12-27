@@ -45,8 +45,6 @@ class ViewController: UIViewController {
             guard let data = data else {
                 return
             }
-            print("Data Retrieved. Amount:")
-            print(data)
             do {
                 let decoder = JSONDecoder()
                 let theEmpireStrikesBackInfo = try decoder.decode(TheEmpireStrikesBack.self, from: data)
