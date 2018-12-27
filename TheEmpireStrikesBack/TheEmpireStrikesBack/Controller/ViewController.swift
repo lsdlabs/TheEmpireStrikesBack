@@ -53,6 +53,8 @@ class ViewController: UIViewController {
                 self.characterURLs.append(contentsOf: theEmpireStrikesBackInfo.characters)
                 print(self.characterURLs)
                 
+                self.getCharacters(from: self.characterURLs)
+                
             } catch {
                 print(error)
             }
@@ -77,6 +79,20 @@ class ViewController: UIViewController {
         
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
+        
+        let task  = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            
+            guard let currentCharacter = self.parse(data: data) else { return }
+            self.characters.append(currentCharacter)
+            
+            if self.characters.count == self.characterURLs.count{
+                //TODO: reload
+            }
+        }
+        task.resume()
     }
     
     
@@ -84,7 +100,7 @@ class ViewController: UIViewController {
         do {
             let decoder = JSONDecoder()
             let result = try decoder.decode(CharacterData.self, from: data)
-            print("Names:")
+            print("Character Name:")
             print(result.name)
             return result
         } catch {
@@ -94,11 +110,3 @@ class ViewController: UIViewController {
     }
     
 }
-/*
- let starWarsUrl = "https://swapi.co/api/films/2"
- guard let url = URL(string: starWarsUrl) else {
- print("URL Error")
- return nil
- }
- return url
- */
