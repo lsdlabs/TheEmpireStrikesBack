@@ -10,13 +10,19 @@ import UIKit
 
 class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     
+    // MARK: - Properties
+    
     var characterURLs = [String]()
     var characters: [CharacterData] = []
+    
+    // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchTheEmpireStrikesBackCharacters()
     }
+    
+    // MARK: - Methods
     
     func theEmpireStrikesBackUrl() -> URL? {
         let starWarsUrl = "https://swapi.co/api/films/2"
@@ -107,9 +113,12 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     }
     
     
+    // MARK: - TableView Methods
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return characters.count
     }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterNameCell", for: indexPath)
