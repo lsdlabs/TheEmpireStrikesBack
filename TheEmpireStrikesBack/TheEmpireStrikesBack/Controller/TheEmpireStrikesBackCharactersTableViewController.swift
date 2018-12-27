@@ -104,4 +104,10 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         return characters.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterNameCell", for: indexPath)
+        cell.textLabel?.text = "\(characters[indexPath.row].name)"
+        return cell
+    }
+    
 }
