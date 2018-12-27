@@ -82,6 +82,13 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
             
             guard let currentCharacter = self.parse(data: data) else { return }
             self.characters.append(currentCharacter)
+            
+            if self.characters.count == self.characterURLs.count{
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            
         }
         task.resume()
     }
