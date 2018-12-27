@@ -80,7 +80,18 @@ class ViewController: UIViewController {
     }
     
     
-    
+    func parse(data: Data) -> CharacterData? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(CharacterData.self, from: data)
+            print("Names:")
+            print(result.name)
+            return result
+        } catch {
+            print("Error: \(error)")
+            return nil
+        }
+    }
     
 }
 /*
