@@ -63,14 +63,31 @@ class ViewController: UIViewController {
     
     func getCharacters(from characterURLArray: [String]) {
         for url in characterURLArray{
-            getCharacterData(from: String)
+            guard let characterUrl = URL(string: url) else {
+                print("URL Error")
+                return
+            }
+            getCharacterData(from: characterUrl)
         }
+    }
+    
+    
+    func getCharacterData(from url: URL) {
+        let urlRequest = URLRequest(url: url)
+        
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration)
     }
     
     
     
     
-    
-    
-    
 }
+/*
+ let starWarsUrl = "https://swapi.co/api/films/2"
+ guard let url = URL(string: starWarsUrl) else {
+ print("URL Error")
+ return nil
+ }
+ return url
+ */
