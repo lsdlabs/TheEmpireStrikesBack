@@ -8,15 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
+    
+    // MARK: - Properties
     
     var characterURLs = [String]()
     var characters: [CharacterData] = []
+    
+    
+    
+    // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchTheEmpireStrikesBackCharacters()
     }
+    
+    
+    
+    // MARK: - Methods
     
     func theEmpireStrikesBackUrl() -> URL? {
         let starWarsUrl = "https://swapi.co/api/films/2"
@@ -82,6 +92,12 @@ class ViewController: UIViewController {
             
             guard let currentCharacter = self.parse(data: data) else { return }
             self.characters.append(currentCharacter)
+            
+            if self.characters.count == self.characterURLs.count{
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
         }
         task.resume()
     }
@@ -90,8 +106,6 @@ class ViewController: UIViewController {
         do {
             let decoder = JSONDecoder()
             let result = try decoder.decode(CharacterData.self, from: data)
-            print("Character Name:")
-            print(result.name)
             return result
         } catch {
             print("Error: \(error)")
@@ -99,4 +113,18 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    
+    // MARK: - TableView Methods
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return characters.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterNameCell", for: indexPath)
+        cell.textLabel?.text = "\(characters[indexPath.row].name)"
+        return cell
+    }
 }
