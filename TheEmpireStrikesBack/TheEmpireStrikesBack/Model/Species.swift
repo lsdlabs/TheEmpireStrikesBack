@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Species: Codable {
     let name: String
 }
