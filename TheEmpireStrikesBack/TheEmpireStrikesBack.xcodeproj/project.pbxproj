@@ -16,6 +16,7 @@
 		20AFF61821CF1F3F000A232E /* TheEmpireStrikesBackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF61721CF1F3F000A232E /* TheEmpireStrikesBackUITests.swift */; };
 		20AFF62921D40DB5000A232E /* TheEmpireStrikesBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF62821D40DB5000A232E /* TheEmpireStrikesBack.swift */; };
 		20AFF62B21D40DF3000A232E /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF62A21D40DF3000A232E /* CharacterData.swift */; };
+		20AFF62D21D987A7000A232E /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF62C21D987A7000A232E /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		20AFF61921CF1F3F000A232E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20AFF62821D40DB5000A232E /* TheEmpireStrikesBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheEmpireStrikesBack.swift; sourceTree = "<group>"; };
 		20AFF62A21D40DF3000A232E /* CharacterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
+		20AFF62C21D987A7000A232E /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				20AFF5F921CF1F39000A232E /* TheEmpireStrikesBackCharactersTableViewController.swift */,
+				20AFF62C21D987A7000A232E /* CharacterDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20AFF62D21D987A7000A232E /* CharacterDetailViewController.swift in Sources */,
 				20AFF5FA21CF1F39000A232E /* TheEmpireStrikesBackCharactersTableViewController.swift in Sources */,
 				20AFF62B21D40DF3000A232E /* CharacterData.swift in Sources */,
 				20AFF5F821CF1F39000A232E /* AppDelegate.swift in Sources */,
