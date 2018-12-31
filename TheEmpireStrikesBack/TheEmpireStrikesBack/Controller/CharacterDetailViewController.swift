@@ -92,7 +92,7 @@ class CharacterDetailViewController: UIViewController {
         guard let homeworldURL = getHomeworldURL() else {
             return
         }
-        //getHomeworldData(from: homeworldURL)
+        getHomeworldData(from: homeworldURL)
     }
     
     func getHomeworldURL() -> String? {
@@ -110,7 +110,7 @@ class CharacterDetailViewController: UIViewController {
             guard let data = data else {
                 return
             }
-            //self.homeworld = self.parseHomeworld(data: data)
+            self.homeworld = self.parseHomeworld(data: data)
             DispatchQueue.main.async {
                 
             }
