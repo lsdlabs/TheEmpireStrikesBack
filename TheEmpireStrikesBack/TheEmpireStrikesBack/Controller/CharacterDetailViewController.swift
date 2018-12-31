@@ -38,7 +38,7 @@ class CharacterDetailViewController: UIViewController {
             return
         }
         for url in speciesURL {
-            //getSpeciesData(from: url)
+            getSpeciesData(from: url)
         }
     }
     
@@ -58,11 +58,11 @@ class CharacterDetailViewController: UIViewController {
             guard let data = data else {
                 return
             }
-            //self.species = self.parseSpecies(data: data)
-            //guard let species = self.species else {
-            //    return
-            //}
-            //self.speciesArray.append(species)
+            self.species = self.parseSpecies(data: data)
+            guard let species = self.species else {
+                return
+            }
+            self.speciesArray.append(species)
             DispatchQueue.main.async {
                 //self.updateLabels()
             }
