@@ -114,7 +114,7 @@ class CharacterDetailViewController: UIViewController {
             }
             self.homeworld = self.parseHomeworld(data: data)
             DispatchQueue.main.async {
-                
+                self.updateLabels()
             }
         }
         task.resume()
