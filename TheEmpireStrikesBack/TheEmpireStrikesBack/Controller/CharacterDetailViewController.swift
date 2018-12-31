@@ -22,6 +22,8 @@ class CharacterDetailViewController: UIViewController {
     // MARK: - Properties
     
     var person: CharacterData?
+    var species: Species?
+    var speciesArray: [Species] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,30 @@ class CharacterDetailViewController: UIViewController {
     
     func getSpeciesURL() -> [String]? {
         return person?.species
+    }
+    
+    func getSpeciesData(from url: String) {
+        let session = URLSession(configuration: .default)
+        
+        guard let speciesURL = URL(string: url) else {
+            print("URL Error")
+            return
+        }
+        let urlRequest = URLRequest(url: speciesURL)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            //self.species = self.parseSpecies(data: data)
+            //guard let species = self.species else {
+            //    return
+            //}
+            //self.speciesArray.append(species)
+            DispatchQueue.main.async {
+                //self.updateLabels()
+            }
+        }
+        task.resume()
     }
     
 }
