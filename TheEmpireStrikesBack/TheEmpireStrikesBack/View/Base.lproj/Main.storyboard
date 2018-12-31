@@ -34,7 +34,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="The Empire Strikes Back Characters" id="J5b-vp-clZ"/>
                     <connections>
-                        <segue destination="3sM-Lz-9yg" kind="show" id="DhF-Bt-W3Z"/>
+                        <segue destination="3sM-Lz-9yg" kind="show" identifier="CharacterDetails" id="DhF-Bt-W3Z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIW-bs-bjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
