@@ -98,4 +98,23 @@ class CharacterDetailViewController: UIViewController {
     func getHomeworldURL() -> String? {
         return person?.homeworld
     }
+    
+    func getHomeworldData(from url: String){
+        let session = URLSession(configuration: .default)
+        guard let homeworldURL = URL(string: url) else {
+            print("URL Error")
+            return
+        }
+        let urlRequest = URLRequest(url: homeworldURL)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            //self.homeworld = self.parseHomeworld(data: data)
+            DispatchQueue.main.async {
+                
+            }
+        }
+        task.resume()
+    }
 }
