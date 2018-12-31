@@ -34,6 +34,7 @@ class CharacterDetailViewController: UIViewController {
         genderLabel.text = person?.gender
         
         getSpecies()
+        getHomeworld()
     }
     
     func getSpecies() {
