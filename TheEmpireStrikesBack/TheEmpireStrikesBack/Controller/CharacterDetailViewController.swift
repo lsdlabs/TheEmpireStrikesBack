@@ -88,6 +88,13 @@ class CharacterDetailViewController: UIViewController {
         speciesLabel.text = species?.name
     }
     
+    func getHomeworld() {
+        guard let homeworldURL = getHomeworldURL() else {
+            return
+        }
+        //getHomeworldData(from: homeworldURL)
+    }
+    
     func getHomeworldURL() -> String? {
         return person?.homeworld
     }
