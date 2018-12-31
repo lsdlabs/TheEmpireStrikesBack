@@ -64,7 +64,7 @@ class CharacterDetailViewController: UIViewController {
             }
             self.speciesArray.append(species)
             DispatchQueue.main.async {
-                //self.updateLabels()
+                self.updateSpeciesLabel()
             }
         }
         task.resume()
