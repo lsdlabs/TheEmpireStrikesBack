@@ -67,7 +67,7 @@ class CharacterDetailViewController: UIViewController {
             }
             self.speciesArray.append(species)
             DispatchQueue.main.async {
-                self.updateSpeciesLabel()
+                self.updateLabels()
             }
         }
         task.resume()
@@ -85,8 +85,9 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
-    func updateSpeciesLabel() {
+    func updateLabels() {
         speciesLabel.text = species?.name
+        homeworldLabel.text = homeworld?.name
     }
     
     func getHomeworld() {
