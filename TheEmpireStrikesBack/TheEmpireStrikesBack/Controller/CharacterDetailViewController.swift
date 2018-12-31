@@ -70,4 +70,16 @@ class CharacterDetailViewController: UIViewController {
         task.resume()
     }
     
+    func parseSpecies(data: Data) -> Species? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Species.self, from: data)
+            
+            return result
+        } catch {
+            print("Error decoding JSON: \(error)")
+            return nil
+        }
+    }
+    
 }
