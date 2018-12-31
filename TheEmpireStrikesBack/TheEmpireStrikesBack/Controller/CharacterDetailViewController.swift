@@ -31,6 +31,8 @@ class CharacterDetailViewController: UIViewController {
         nameLabel.text = person?.name
         birthYearLabel.text = person?.birth_year
         genderLabel.text = person?.gender
+        
+        getSpecies()
     }
     
     func getSpecies() {
