@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="1132" y="-13.043478260869566"/>
         </scene>
-        <!--View Controller-->
+        <!--Character Detail View Controller-->
         <scene sceneID="gOB-jt-yG1">
             <objects>
-                <viewController id="3sM-Lz-9yg" sceneMemberID="viewController">
+                <viewController id="3sM-Lz-9yg" customClass="CharacterDetailViewController" customModule="TheEmpireStrikesBack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ePt-Qb-ERh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
