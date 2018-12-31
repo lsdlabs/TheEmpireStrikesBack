@@ -31,6 +31,15 @@ class CharacterDetailViewController: UIViewController {
         genderLabel.text = person?.gender
     }
     
+    func getSpecies() {
+        guard let speciesURL = getSpeciesURL() else {
+            return
+        }
+        for url in speciesURL {
+            //getSpeciesData(from: url)
+        }
+    }
+    
     func getSpeciesURL() -> [String]? {
         return person?.species
     }
