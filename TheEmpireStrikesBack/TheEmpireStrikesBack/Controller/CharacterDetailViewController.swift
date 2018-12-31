@@ -82,4 +82,7 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
+    func updateSpeciesLabel() {
+        speciesLabel.text = species?.name
+    }
 }
