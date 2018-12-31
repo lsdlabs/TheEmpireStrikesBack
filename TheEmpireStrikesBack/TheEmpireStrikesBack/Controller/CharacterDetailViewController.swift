@@ -24,6 +24,7 @@ class CharacterDetailViewController: UIViewController {
     var person: CharacterData?
     var species: Species?
     var speciesArray: [Species] = []
+    var homeworld: Homeworld?
     
     override func viewDidLoad() {
         super.viewDidLoad()
