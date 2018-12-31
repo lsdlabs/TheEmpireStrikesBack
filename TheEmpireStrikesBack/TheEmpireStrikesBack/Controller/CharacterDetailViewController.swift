@@ -25,6 +25,10 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameLabel.text = person?.name
+        birthYearLabel.text = person?.birth_year
+        genderLabel.text = person?.gender
     }
     
     
