@@ -87,4 +87,8 @@ class CharacterDetailViewController: UIViewController {
     func updateSpeciesLabel() {
         speciesLabel.text = species?.name
     }
+    
+    func getHomeworldURL() -> String? {
+        return person?.homeworld
+    }
 }
