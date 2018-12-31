@@ -24,6 +24,7 @@ class CharacterDetailViewController: UIViewController {
     var person: CharacterData?
     var species: Species?
     var speciesArray: [Species] = []
+    var homeworld: Homeworld?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class CharacterDetailViewController: UIViewController {
         genderLabel.text = person?.gender
         
         getSpecies()
+        getHomeworld()
     }
     
     func getSpecies() {
@@ -66,7 +68,7 @@ class CharacterDetailViewController: UIViewController {
             }
             self.speciesArray.append(species)
             DispatchQueue.main.async {
-                self.updateSpeciesLabel()
+                self.updateLabels()
             }
         }
         task.resume()
@@ -84,7 +86,49 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
-    func updateSpeciesLabel() {
+    func updateLabels() {
         speciesLabel.text = species?.name
+        homeworldLabel.text = homeworld?.name
+    }
+    
+    func getHomeworld() {
+        guard let homeworldURL = getHomeworldURL() else {
+            return
+        }
+        getHomeworldData(from: homeworldURL)
+    }
+    
+    func getHomeworldURL() -> String? {
+        return person?.homeworld
+    }
+    
+    func getHomeworldData(from url: String){
+        let session = URLSession(configuration: .default)
+        guard let homeworldURL = URL(string: url) else {
+            print("URL Error")
+            return
+        }
+        let urlRequest = URLRequest(url: homeworldURL)
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
+            self.homeworld = self.parseHomeworld(data: data)
+            DispatchQueue.main.async {
+                self.updateLabels()
+            }
+        }
+        task.resume()
+    }
+    
+    func parseHomeworld(data: Data) -> Homeworld? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Homeworld.self, from: data)
+            return result
+        } catch {
+            print("Error decoding JSON: \(error)")
+            return nil
+        }
     }
 }
