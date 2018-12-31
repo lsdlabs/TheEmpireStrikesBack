@@ -114,6 +114,19 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     }
     
     
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CharacterDetails" {
+            if let destination = segue.destination as? CharacterDetailViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let characterAtSelectedRow = characters[indexPath.row]
+                    destination.person = characterAtSelectedRow
+                }
+            }
+        }
+    }
+    
     
     // MARK: - TableView Methods
     
