@@ -10,5 +10,20 @@ import Foundation
 import UIKit
 
 class CharacterDetailViewController: UIViewController {
+    
+    // MARK: - UI Elements
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var birthYearLabel: UILabel!
+    @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var speciesLabel: UILabel!
+    @IBOutlet weak var homeworldLabel: UILabel!
+    
+    
+    
     var person: CharacterData?
+    
+    
+    
+    
+    
 }

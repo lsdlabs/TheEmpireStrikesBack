@@ -123,6 +123,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZQH-Ui-Wed"/>
                     </view>
+                    <connections>
+                        <outlet property="birthYearLabel" destination="uNk-0U-M2J" id="ebF-sU-BiZ"/>
+                        <outlet property="genderLabel" destination="D9F-Gn-KEm" id="6up-LR-UnA"/>
+                        <outlet property="homeworldLabel" destination="KHr-ze-oVX" id="tmN-2A-H0b"/>
+                        <outlet property="nameLabel" destination="FO0-7O-Rtc" id="8qd-UD-Sne"/>
+                        <outlet property="speciesLabel" destination="e6e-He-7PP" id="7jD-7H-Kd2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkq-Y5-7gD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
