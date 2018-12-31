@@ -117,4 +117,15 @@ class CharacterDetailViewController: UIViewController {
         }
         task.resume()
     }
+    
+    func parseHomeworld(data: Data) -> Homeworld? {
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(Homeworld.self, from: data)
+            return result
+        } catch {
+            print("Error decoding JSON: \(error)")
+            return nil
+        }
+    }
 }
