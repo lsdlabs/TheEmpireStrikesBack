@@ -113,6 +113,18 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         }
     }
     
+    func setCellProperties(with cell: UITableViewCell) {
+        
+        cell.textLabel?.textColor = UIColor.black
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 22)
+        cell.accessoryType = .disclosureIndicator
+        
+        let backgroundView = UIView()
+        let selectedCellColor = UIColor.black
+        backgroundView.backgroundColor = selectedCellColor
+        cell.selectedBackgroundView = backgroundView
+    }
+    
     
     // MARK: - Segue
     
@@ -138,6 +150,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterNameCell", for: indexPath)
         cell.textLabel?.text = "\(characters[indexPath.row].name)"
+        setCellProperties(with: cell)
         return cell
     }
 }
