@@ -14,6 +14,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     
     var characterURLs = [String]()
     var characters: [CharacterData] = []
+    var isLoading = false
     
     
     
@@ -21,6 +22,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isLoading = true
         fetchTheEmpireStrikesBackCharacters()
     }
     
@@ -95,6 +97,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
             
             if self.characters.count == self.characterURLs.count{
                 DispatchQueue.main.async {
+                    self.isLoading = false
                     self.tableView.reloadData()
                 }
             }
@@ -143,14 +146,22 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     // MARK: - TableView Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
+        if isLoading {
+            return 1
+        } else {
+            return characters.count
+        }
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterNameCell", for: indexPath)
-        cell.textLabel?.text = "\(characters[indexPath.row].name)"
-        setCellProperties(with: cell)
+        if isLoading {
+            cell.textLabel?.text = "Loading Characters..."
+        } else {
+            cell.textLabel?.text = "\(characters[indexPath.row].name)"
+            setCellProperties(with: cell)
+        }
         return cell
     }
 }
