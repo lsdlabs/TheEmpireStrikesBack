@@ -14,4 +14,5 @@ struct CharacterData: Codable {
     let gender: String?
     let homeworld: String
     let species: [String]
+    let mass: String
 }
