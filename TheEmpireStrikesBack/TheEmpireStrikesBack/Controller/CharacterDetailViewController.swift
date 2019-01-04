@@ -34,6 +34,11 @@ class CharacterDetailViewController: UIViewController {
         nameLabel.text = person?.name
         birthYearLabel.text = person?.birth_year
         genderLabel.text = person?.gender
+        if let mass = person?.mass {
+            massLabel.text = "\(mass)kg"
+        } else {
+            massLabel.text = "mass unknown"
+        }
         
         getSpecies()
         getHomeworld()
