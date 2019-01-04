@@ -17,7 +17,6 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     var isLoading = false
     
     
-    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
@@ -25,7 +24,6 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         isLoading = true
         fetchTheEmpireStrikesBackCharacters()
     }
-    
     
     
     // MARK: - Methods
