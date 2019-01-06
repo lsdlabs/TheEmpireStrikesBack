@@ -19,7 +19,7 @@
 		20AFF62D21D987A7000A232E /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF62C21D987A7000A232E /* CharacterDetailViewController.swift */; };
 		20AFF62F21D98E86000A232E /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF62E21D98E86000A232E /* Species.swift */; };
 		20AFF63121D98EF7000A232E /* Homeworld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AFF63021D98EF7000A232E /* Homeworld.swift */; };
-		20AFF63921E25820000A232E /* TheEmpireStrikesBackCharactersLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AFF63821E2581F000A232E /* TheEmpireStrikesBackCharactersLogo.png */; };
+		20AFF63D21E25F82000A232E /* TheEmpireStrikesBackCharacters.png in Resources */ = {isa = PBXBuildFile; fileRef = 20AFF63C21E25F82000A232E /* TheEmpireStrikesBackCharacters.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		20AFF62C21D987A7000A232E /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		20AFF62E21D98E86000A232E /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		20AFF63021D98EF7000A232E /* Homeworld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homeworld.swift; sourceTree = "<group>"; };
-		20AFF63821E2581F000A232E /* TheEmpireStrikesBackCharactersLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TheEmpireStrikesBackCharactersLogo.png; sourceTree = "<group>"; };
+		20AFF63C21E25F82000A232E /* TheEmpireStrikesBackCharacters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TheEmpireStrikesBackCharacters.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 				20AFF62721D40C0A000A232E /* Controller */,
 				20AFF5F721CF1F39000A232E /* AppDelegate.swift */,
 				20AFF5FE21CF1F3D000A232E /* Assets.xcassets */,
-				20AFF63821E2581F000A232E /* TheEmpireStrikesBackCharactersLogo.png */,
+				20AFF63C21E25F82000A232E /* TheEmpireStrikesBackCharacters.png */,
 				20AFF60021CF1F3D000A232E /* LaunchScreen.storyboard */,
 				20AFF60321CF1F3D000A232E /* Info.plist */,
 			);
@@ -273,8 +273,8 @@
 			files = (
 				20AFF60221CF1F3D000A232E /* LaunchScreen.storyboard in Resources */,
 				20AFF5FF21CF1F3D000A232E /* Assets.xcassets in Resources */,
+				20AFF63D21E25F82000A232E /* TheEmpireStrikesBackCharacters.png in Resources */,
 				20AFF5FD21CF1F39000A232E /* Main.storyboard in Resources */,
-				20AFF63921E25820000A232E /* TheEmpireStrikesBackCharactersLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
