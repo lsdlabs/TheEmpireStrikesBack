@@ -30,6 +30,13 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        assignValuesToLabelsContainingCharacterData()
+        
+        getSpecies()
+        getHomeworld()
+    }
+    
+    func assignValuesToLabelsContainingCharacterData(){
         if let name = person?.name {
             nameLabel.text = "\(name)"
         } else {
@@ -45,9 +52,6 @@ class CharacterDetailViewController: UIViewController {
         } else {
             genderLabel.text = "Gender Unknown"
         }
-        
-        getSpecies()
-        getHomeworld()
     }
     
     func getSpecies() {
