@@ -60,6 +60,11 @@ class CharacterDetailViewController: UIViewController {
         }
         let urlRequest = URLRequest(url: speciesURL)
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error calling GET on speciesUrl")
+                print(error)
+                return
+            }
             guard let data = data else {
                 return
             }
@@ -111,6 +116,11 @@ class CharacterDetailViewController: UIViewController {
         }
         let urlRequest = URLRequest(url: homeworldURL)
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error calling GET on homeworldUrl")
+                print(error)
+                return
+            }
             guard let data = data else {
                 return
             }

@@ -49,6 +49,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         
         let task = session.dataTask(with: urlRequest) { (data, repsonse, error) in
             if let error = error {
+                print("Error calling GET on starWarsUrl")
                 print(error)
                 return
             }
@@ -86,6 +87,11 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         let session = URLSession(configuration: configuration)
         
         let task  = session.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error calling GET on characterUrl")
+                print(error)
+                return
+            }
             guard let data = data else {
                 return
             }
