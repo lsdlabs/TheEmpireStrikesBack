@@ -38,7 +38,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     }
     
     func fetchTheEmpireStrikesBackCharacters() {
-        guard let starWarsUrl = theEmpireStrikesBackUrl() else {
+        guard let starWarsUrl = getTheEmpireStrikesBackUrl() else {
             print("Error: Cannot get The Empire Strikes Back URL")
             return
         }
