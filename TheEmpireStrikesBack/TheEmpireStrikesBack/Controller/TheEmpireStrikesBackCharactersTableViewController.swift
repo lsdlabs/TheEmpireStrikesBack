@@ -28,7 +28,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     
     // MARK: - Methods
     
-    func theEmpireStrikesBackUrl() -> URL? {
+    func getTheEmpireStrikesBackUrl() -> URL? {
         let starWarsUrl = "https://swapi.co/api/films/2"
         guard let url = URL(string: starWarsUrl) else {
             print("Error: Cannot create The Empire Strikes Back URL")
