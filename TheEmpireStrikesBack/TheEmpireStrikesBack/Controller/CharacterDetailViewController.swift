@@ -30,9 +30,26 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = person?.name
-        birthYearLabel.text = person?.birth_year
-        genderLabel.text = person?.gender
+//        nameLabel.text = person?.name
+//        birthYearLabel.text = person?.birth_year
+//        genderLabel.text = person?.gender
+        
+        
+        if let name = person?.name {
+            nameLabel.text = "\(name)"
+        } else {
+            nameLabel.text = "Name Unknown"
+        }
+        if let birthYear = person?.birth_year {
+            birthYearLabel.text = "\(birthYear)"
+        } else {
+            birthYearLabel.text = "Birth Year Unknown"
+        }
+        if let gender = person?.gender {
+            genderLabel.text = "\(gender)"
+        } else {
+            genderLabel.text = "Gender Unknown"
+        }
         
         getSpecies()
         getHomeworld()
@@ -87,7 +104,7 @@ class CharacterDetailViewController: UIViewController {
             
             return result
         } catch {
-            print("Error decoding JSON: \(error)")
+            print("Species- Decoding Error: \(error)")
             return nil
         }
     }
@@ -138,7 +155,7 @@ class CharacterDetailViewController: UIViewController {
             let result = try decoder.decode(Homeworld.self, from: data)
             return result
         } catch {
-            print("Error decoding JSON: \(error)")
+            print("Homeworld- Decoding Error: \(error)")
             return nil
         }
     }

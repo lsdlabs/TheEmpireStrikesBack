@@ -47,7 +47,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         
-        let task = session.dataTask(with: urlRequest) { (data, repsonse, error) in
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 print("Error calling GET on starWarsUrl")
                 print(error)
@@ -63,7 +63,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
                 self.getCharacters(from: self.characterURLs)
                 
             } catch {
-                print(error)
+                print("TheEmpireStrikesBack- Decoding Error: \(error)")
             }
         }
         task.resume()
@@ -115,7 +115,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
             let result = try decoder.decode(CharacterData.self, from: data)
             return result
         } catch {
-            print("Error: \(error)")
+            print("CharacterData- Decoding Error: \(error)")
             return nil
         }
     }
