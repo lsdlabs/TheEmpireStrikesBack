@@ -147,7 +147,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     }
     
     
-    // MARK: - TableView Methods
+    // MARK: - UITableViewDataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isLoading {
