@@ -17,12 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TheEmpireStrikesBackCharactersLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ujj-P0-McJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TheEmpireStrikesBackCharactersLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ujj-P0-McJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="ZcD-H9-1nI"/>
+                                    <constraint firstAttribute="height" constant="667" id="xNB-mv-CL4"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ujj-P0-McJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QpG-zf-V6v"/>
+                            <constraint firstItem="ujj-P0-McJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="XRG-TH-t82"/>
+                            <constraint firstItem="ujj-P0-McJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Zkc-A8-2Uw"/>
+                            <constraint firstItem="ujj-P0-McJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fMa-BF-4Bj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
