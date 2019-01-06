@@ -31,7 +31,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     func theEmpireStrikesBackUrl() -> URL? {
         let starWarsUrl = "https://swapi.co/api/films/2"
         guard let url = URL(string: starWarsUrl) else {
-            print("URL Error")
+            print("Error: Cannot create The Empire Strikes Back URL")
             return nil
         }
         return url
@@ -39,7 +39,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     
     func fetchTheEmpireStrikesBackCharacters() {
         guard let starWarsUrl = theEmpireStrikesBackUrl() else {
-            print("URL Error")
+            print("Error: Cannot get The Empire Strikes Back URL")
             return
         }
         let urlRequest = URLRequest(url: starWarsUrl)
@@ -72,7 +72,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     func getCharacters(from characterURLArray: [String]) {
         for url in characterURLArray{
             guard let characterUrl = URL(string: url) else {
-                print("URL Error")
+                print("Error: Cannot create a character URL")
                 return
             }
             getCharacterData(from: characterUrl)

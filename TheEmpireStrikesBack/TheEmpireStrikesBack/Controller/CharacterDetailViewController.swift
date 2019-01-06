@@ -55,7 +55,7 @@ class CharacterDetailViewController: UIViewController {
         let session = URLSession(configuration: .default)
         
         guard let speciesURL = URL(string: url) else {
-            print("URL Error")
+            print("Error: Cannot create a species URL")
             return
         }
         let urlRequest = URLRequest(url: speciesURL)
@@ -106,7 +106,7 @@ class CharacterDetailViewController: UIViewController {
     func getHomeworldData(from url: String){
         let session = URLSession(configuration: .default)
         guard let homeworldURL = URL(string: url) else {
-            print("URL Error")
+            print("Error: Cannot create a homeworld URL")
             return
         }
         let urlRequest = URLRequest(url: homeworldURL)
