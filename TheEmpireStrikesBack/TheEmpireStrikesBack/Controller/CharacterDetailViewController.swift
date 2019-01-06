@@ -109,8 +109,16 @@ class CharacterDetailViewController: UIViewController {
     }
     
     func updateLabels() {
-        speciesLabel.text = species?.name
-        homeworldLabel.text = homeworld?.name
+        if let species = species?.name {
+            speciesLabel.text = "\(species)"
+        } else {
+            speciesLabel.text = "Species Unknown"
+        }
+        if let homeworld = homeworld?.name {
+            homeworldLabel.text = "\(homeworld)"
+        } else {
+            homeworldLabel.text = "Homeworld Unknown"
+        }
     }
     
     func getHomeworld() {
