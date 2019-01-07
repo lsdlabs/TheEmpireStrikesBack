@@ -44,6 +44,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         }
         let urlRequest = URLRequest(url: starWarsUrl)
         
+        
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         
