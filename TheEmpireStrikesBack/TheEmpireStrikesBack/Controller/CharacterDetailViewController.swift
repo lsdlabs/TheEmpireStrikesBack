@@ -30,12 +30,28 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = person?.name
-        birthYearLabel.text = person?.birth_year
-        genderLabel.text = person?.gender
+        assignValuesToLabelsContainingCharacterData()
         
         getSpecies()
         getHomeworld()
+    }
+    
+    func assignValuesToLabelsContainingCharacterData(){
+        if let name = person?.name {
+            nameLabel.text = "\(name)"
+        } else {
+            nameLabel.text = "Name Unknown"
+        }
+        if let birthYear = person?.birth_year {
+            birthYearLabel.text = "\(birthYear)"
+        } else {
+            birthYearLabel.text = "Birth Year Unknown"
+        }
+        if let gender = person?.gender {
+            genderLabel.text = "\(gender)"
+        } else {
+            genderLabel.text = "Gender Unknown"
+        }
     }
     
     func getSpecies() {
@@ -55,11 +71,16 @@ class CharacterDetailViewController: UIViewController {
         let session = URLSession(configuration: .default)
         
         guard let speciesURL = URL(string: url) else {
-            print("URL Error")
+            print("Error: Cannot create a species URL")
             return
         }
         let urlRequest = URLRequest(url: speciesURL)
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error calling GET on speciesUrl")
+                print(error)
+                return
+            }
             guard let data = data else {
                 return
             }
@@ -82,14 +103,22 @@ class CharacterDetailViewController: UIViewController {
             
             return result
         } catch {
-            print("Error decoding JSON: \(error)")
+            print("Species- Decoding Error: \(error)")
             return nil
         }
     }
     
     func updateLabels() {
-        speciesLabel.text = species?.name
-        homeworldLabel.text = homeworld?.name
+        if let species = species?.name {
+            speciesLabel.text = "\(species)"
+        } else {
+            speciesLabel.text = "Species Unknown"
+        }
+        if let homeworld = homeworld?.name {
+            homeworldLabel.text = "\(homeworld)"
+        } else {
+            homeworldLabel.text = "Homeworld Unknown"
+        }
     }
     
     func getHomeworld() {
@@ -106,11 +135,16 @@ class CharacterDetailViewController: UIViewController {
     func getHomeworldData(from url: String){
         let session = URLSession(configuration: .default)
         guard let homeworldURL = URL(string: url) else {
-            print("URL Error")
+            print("Error: Cannot create a homeworld URL")
             return
         }
         let urlRequest = URLRequest(url: homeworldURL)
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error calling GET on homeworldUrl")
+                print(error)
+                return
+            }
             guard let data = data else {
                 return
             }
@@ -128,7 +162,7 @@ class CharacterDetailViewController: UIViewController {
             let result = try decoder.decode(Homeworld.self, from: data)
             return result
         } catch {
-            print("Error decoding JSON: \(error)")
+            print("Homeworld- Decoding Error: \(error)")
             return nil
         }
     }

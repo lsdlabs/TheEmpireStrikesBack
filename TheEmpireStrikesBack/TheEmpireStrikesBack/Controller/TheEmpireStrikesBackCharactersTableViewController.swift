@@ -28,18 +28,18 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     
     // MARK: - Methods
     
-    func theEmpireStrikesBackUrl() -> URL? {
+    func getTheEmpireStrikesBackUrl() -> URL? {
         let starWarsUrl = "https://swapi.co/api/films/2"
         guard let url = URL(string: starWarsUrl) else {
-            print("URL Error")
+            print("Error: Cannot create The Empire Strikes Back URL")
             return nil
         }
         return url
     }
     
     func fetchTheEmpireStrikesBackCharacters() {
-        guard let starWarsUrl = theEmpireStrikesBackUrl() else {
-            print("URL Error")
+        guard let starWarsUrl = getTheEmpireStrikesBackUrl() else {
+            print("Error: Cannot get The Empire Strikes Back URL")
             return
         }
         let urlRequest = URLRequest(url: starWarsUrl)
@@ -47,8 +47,9 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration)
         
-        let task = session.dataTask(with: urlRequest) { (data, repsonse, error) in
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
+                print("Error calling GET on starWarsUrl")
                 print(error)
                 return
             }
@@ -62,7 +63,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
                 self.getCharacters(from: self.characterURLs)
                 
             } catch {
-                print(error)
+                print("TheEmpireStrikesBack- Decoding Error: \(error)")
             }
         }
         task.resume()
@@ -72,7 +73,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     func getCharacters(from characterURLArray: [String]) {
         for url in characterURLArray{
             guard let characterUrl = URL(string: url) else {
-                print("URL Error")
+                print("Error: Cannot create a character URL")
                 return
             }
             getCharacterData(from: characterUrl)
@@ -86,6 +87,11 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
         let session = URLSession(configuration: configuration)
         
         let task  = session.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                print("Error calling GET on characterUrl")
+                print(error)
+                return
+            }
             guard let data = data else {
                 return
             }
@@ -109,7 +115,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
             let result = try decoder.decode(CharacterData.self, from: data)
             return result
         } catch {
-            print("Error: \(error)")
+            print("CharacterData- Decoding Error: \(error)")
             return nil
         }
     }
@@ -141,7 +147,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
     }
     
     
-    // MARK: - TableView Methods
+    // MARK: - UITableViewDataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isLoading {
