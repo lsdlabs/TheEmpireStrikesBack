@@ -18,8 +18,6 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var homeworldLabel: UILabel!
-    @IBOutlet weak var massLabel: UILabel!
-    
     
     // MARK: - Properties
     
@@ -53,11 +51,6 @@ class CharacterDetailViewController: UIViewController {
         } else {
             genderLabel.text = "Gender Unknown"
         }
-        if let mass = person?.mass {
-            massLabel.text = "\(mass)kg"
-        } else {
-            massLabel.text = "Mass Unknown"
-        }
     }
     
     func getSpecies() {
@@ -88,6 +81,7 @@ class CharacterDetailViewController: UIViewController {
                 return
             }
             guard let data = data else {
+                print("No species data")
                 return
             }
             self.species = self.parseSpecies(data: data)
@@ -152,6 +146,7 @@ class CharacterDetailViewController: UIViewController {
                 return
             }
             guard let data = data else {
+                print("No homeworld data")
                 return
             }
             self.homeworld = self.parseHomeworld(data: data)

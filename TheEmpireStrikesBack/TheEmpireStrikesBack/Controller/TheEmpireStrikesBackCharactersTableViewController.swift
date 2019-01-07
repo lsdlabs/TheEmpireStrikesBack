@@ -55,6 +55,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
                 return
             }
             guard let data = data else {
+                print("No 'The Empire Strikes Back' data")
                 return
             }
             do {
@@ -94,6 +95,7 @@ class TheEmpireStrikesBackCharactersTableViewController: UITableViewController {
                 return
             }
             guard let data = data else {
+                print("No character data")
                 return
             }
             
