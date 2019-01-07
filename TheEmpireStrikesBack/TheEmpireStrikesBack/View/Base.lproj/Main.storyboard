@@ -178,6 +178,7 @@
                         <outlet property="birthYearLabel" destination="uNk-0U-M2J" id="ebF-sU-BiZ"/>
                         <outlet property="genderLabel" destination="D9F-Gn-KEm" id="6up-LR-UnA"/>
                         <outlet property="homeworldLabel" destination="KHr-ze-oVX" id="tmN-2A-H0b"/>
+                        <outlet property="massLabel" destination="Ofc-fV-9YX" id="9ej-mn-0X9"/>
                         <outlet property="nameLabel" destination="FO0-7O-Rtc" id="8qd-UD-Sne"/>
                         <outlet property="speciesLabel" destination="e6e-He-7PP" id="7jD-7H-Kd2"/>
                     </connections>
