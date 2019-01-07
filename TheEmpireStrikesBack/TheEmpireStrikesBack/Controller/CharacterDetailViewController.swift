@@ -52,6 +52,11 @@ class CharacterDetailViewController: UIViewController {
         } else {
             genderLabel.text = "Gender Unknown"
         }
+        if let mass = person?.mass {
+            massLabel.text = "\(mass)kg"
+        } else {
+            massLabel.text = "Mass Unknown"
+        }
     }
     
     func getSpecies() {
