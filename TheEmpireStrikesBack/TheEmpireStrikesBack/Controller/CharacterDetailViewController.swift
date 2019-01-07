@@ -18,6 +18,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var homeworldLabel: UILabel!
+    @IBOutlet weak var massLabel: UILabel!
     
     // MARK: - Properties
     
