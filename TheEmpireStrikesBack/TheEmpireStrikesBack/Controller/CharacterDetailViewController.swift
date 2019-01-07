@@ -18,6 +18,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var speciesLabel: UILabel!
     @IBOutlet weak var homeworldLabel: UILabel!
+    @IBOutlet weak var massLabel: UILabel!
     
     // MARK: - Properties
     
@@ -50,6 +51,11 @@ class CharacterDetailViewController: UIViewController {
             genderLabel.text = "\(gender)"
         } else {
             genderLabel.text = "Gender Unknown"
+        }
+        if let mass = person?.mass {
+            massLabel.text = "\(mass)kg"
+        } else {
+            massLabel.text = "Mass Unknown"
         }
     }
     
